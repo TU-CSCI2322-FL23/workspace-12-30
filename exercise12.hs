@@ -17,9 +17,9 @@ insertionSort (x:xs) = insert x (insertionSort xs)
 dropEveryNth :: Int -> [a] -> [a]
 dropEveryNth n lst = undefined
 
--- 3. The nth Fibonacci number is the sum of the (n-1)th and (n-2)th Fibonacci numbers, as described
--- in the following function. However, this function is very, very, very slow. Figure out a way to
--- compute the nth Fibonacci number in linear, instead of exponential, time.
+-- 3. The nth Fibonacci number is the sum of the (n-1)th and (n-2)th Fibonacci numbers, 
+-- as described in the following function. However, this function is very, very, very slow.
+-- Figure out a way to compute Fibonaccis number in linear, instead of exponential, time.
 
 fib :: Integer -> Integer
 fib 0 = 0
