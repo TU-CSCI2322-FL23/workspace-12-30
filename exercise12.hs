@@ -9,10 +9,11 @@
 insertionSort :: Ord a => [a] -> [a]
 insertionSort [] = []
 insertionSort (x:xs) = insert x (insertionSort xs)
-  where insert :: Ord a => a -> [a] -> [a]
-        insert x lst = undefined
 
--- 2. Define the function dropEveryNth that takes a list and drops every nth element of the list. 
+insert :: Ord a => a -> [a] -> [a]
+insert x lst = undefined
+
+-- 2. Define the function dropEveryNth that takes a list and drops every nth element. 
 -- For instance, removing every second element from [1,2,3,4,5] results in [1,3,5]. 
 dropEveryNth :: Int -> [a] -> [a]
 dropEveryNth n lst = undefined
