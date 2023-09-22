@@ -11,12 +11,12 @@ insertionSort [] = []
 insertionSort (x:xs) = insert x (insertionSort xs)
 
 insert :: Ord a => a -> [a] -> [a]
-insert x lst = undefined
+insert = undefined
 
 -- 2. Define the function dropEveryNth that takes a list and drops every nth element. 
 -- For instance, removing every second element from [1,2,3,4,5] results in [1,3,5]. 
 dropEveryNth :: Int -> [a] -> [a]
-dropEveryNth n lst = undefined
+dropEveryNth = undefined
 
 -- 3. The nth Fibonacci number is the sum of the (n-1)th and (n-2)th Fibonacci numbers, 
 -- as described in the following function. However, this function is very, very, very slow.
