@@ -9,9 +9,10 @@ map :: (a -> b) -> [a] -> [b]
 filter :: (a -> Bool) -> [a] -> [a]
 -}
 
--- 1) Define myAnd :: [Bool] -> Bool to take the conjunction of a list.
+-- 1) Using a fold, rewrite myAnd :: [Bool] -> Bool 
 myAnd :: [Bool] -> Bool
-myAnd = undefined
+myAnd [] = True
+myAnd (x:xs) = x && (myAnd xs)
 
 -- 2) Using a fold, define positives :: [Int] -> [Int] that returns the positive elements.
 positives :: [Int] -> [Int]
