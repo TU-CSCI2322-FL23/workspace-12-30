@@ -34,8 +34,9 @@ sumValues = undefined
 bestKey :: [(a, Int)] -> a
 bestKey = undefined
 
--- 7) Define a higher-order function exists :: (a -> Bool) -> [a] -> Bool that takes a predicate, a
--- list, and returns true if the predicate is true for anything in the list. 
+-- 7) Define a higher-order function exists :: (a -> Bool) -> [a] -> Bool that 
+-- takes a predicate, a list, and returns true if the predicate is true for 
+-- anything in the list. 
    -- a) Using recursion.
    -- b)(Optional) using a fold.
 exists :: (a -> Bool) -> [a] -> Bool
