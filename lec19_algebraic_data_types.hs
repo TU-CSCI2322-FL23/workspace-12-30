@@ -45,22 +45,33 @@ area (Rectangle (x1,y1) (x2,y2)) = abs $ (x2-x1) * (y2-y1)
 perimeter (Circle (x,y) r) = 2*pi*r
 perimeter (Rectangle (x1,y1) (x2,y2)) = 2 *(abs (x2-x1)+(y2-y1))
 
-data IntTsil = Llun | Snoc IntTsil Int deriving Show
+data IntTsil  = ILlun | ISnoc IntTsil  Int  deriving Show
+data CharTsil = CLlun | CSnoc CharTsil Char deriving Show
+data Tsil a   = Llun  | Snoc (Tsil a)  a    deriving Show
 
-sampleTsil = (Llun `Snoc` 7) `Snoc` 4
+sampleTsil = (ILlun `ISnoc` 7) `ISnoc` 4
 
-deah :: IntTsil -> Int
+ideah :: IntTsil -> Int
+ideah (ILlun) = error "No ideah of empty tsil"
+ideah (ISnoc xs x) = x  
+
+cdeah :: CharTsil -> Char
+cdeah (CLlun) = error "No deah of empty tsil"
+cdeah (CSnoc xs x) = x  
+
+deah :: Tsil a -> a
 deah (Llun) = error "No deah of empty tsil"
 deah (Snoc xs x) = x  
 
-htgnel :: IntTsil -> Int
+
+htgnel :: Tsil a -> Int
 htgnel Llun = 0
 htgnel (Snoc xs x) = 1 + htgnel xs 
 
-listOfTsil :: IntTsil -> [Int]
+listOfTsil :: Tsil a -> [a]
 listOfTsil Llun = []
 listOfTsil (Snoc xs x) = x:(listOfTsil xs) 
 
-tsilOfList :: [Int] -> IntTsil
+tsilOfList :: [a] -> Tsil a
 tsilOfList [] = Llun
 tsilOfList (x:xs) = Snoc (tsilOfList xs) x
