@@ -17,6 +17,12 @@ lexWord "/" = OpTok Divide
 lexWord "*" = OpTok Mult
 lexWord x = NumTok (read x)
 
+numExprToks, opExprToks, rightExprToks, leftExprToks :: [Token]
+numExprToks = [NumTok 79]
+opExprToks = [OpTok Plus, NumTok 79, NumTok 4]
+rightExprToks = [OpTok Minus, NumTok 4, OpTok Mult, NumTok 8, NumTok 2]
+leftExprToks = [OpTok Minus, OpTok Mult, NumTok 8, NumTok 2, NumTok 4]
+
 parser :: [Token] -> Expr
 parser = undefined
 

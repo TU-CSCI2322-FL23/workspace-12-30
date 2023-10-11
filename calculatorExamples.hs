@@ -31,11 +31,13 @@ opStr = "+ 79 4"
 rightStr = "- 4 * 8 2"
 leftStr = "- * 8 2 4"
 
+{- in the Calculator file 
 numExprToks, opExprToks, rightExprToks, leftExprToks :: [Token]
 numExprToks = [NumTok 79]
 opExprToks = [OpTok Plus, NumTok 79, NumTok 4]
 rightExprToks = [OpTok Minus, NumTok 4, OpTok Mult, NumTok 8, NumTok 2]
 leftExprToks = [OpTok Minus, OpTok Mult, NumTok 8, NumTok 2, NumTok 4]
+-}
 
 numExpr, opExpr, rightExpr, leftExpr :: Expr
 numExpr = NumExpr 79
