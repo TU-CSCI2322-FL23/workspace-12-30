@@ -1,12 +1,11 @@
 module Calculator where
 
---data Token = Plus | Minus | Mult | Divide | Num Double deriving (Show, Eq)
---also valid, but we voted against it
-
 data Operator = Plus | Minus | Mult | Divide deriving (Show, Eq)
 data Token = OpTok Operator | NumTok Double deriving (Show, Eq)
-
 data Expr = OpExpr Operator Expr Expr | NumExpr Double deriving (Show, Eq)
+
+--data Token = Plus | Minus | Mult | Divide | Num Double deriving (Show, Eq)
+--also valid, but we voted against it
 
 lexer :: String -> [Token]
 lexer str = map lexWord (words str)
@@ -23,7 +22,6 @@ parser = undefined
 
 eval :: Expr -> Double
 eval (NumExpr x) = x
-
 eval (OpExpr Plus lft rgt) = (eval lft) + (eval rgt)
 eval (OpExpr Minus lft rgt) = (eval lft) - (eval rgt)
 eval (OpExpr Mult lft rgt) = (eval lft) * (eval rgt)
