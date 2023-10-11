@@ -63,7 +63,6 @@ deah :: Tsil a -> a
 deah (Llun) = error "No deah of empty tsil"
 deah (Snoc xs x) = x  
 
-
 htgnel :: Tsil a -> Int
 htgnel Llun = 0
 htgnel (Snoc xs x) = 1 + htgnel xs 
