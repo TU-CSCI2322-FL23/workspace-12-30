@@ -25,14 +25,20 @@ treeThree = OpExpr Mult (OpExpr Plus (NumExpr 3.0)
 
 -- Examples for parsing - try these in order before you work on tokensOne/Two/Three
 
-numExpr, opExpr, rightExpr, leftExpr :: String
-numExpr = "79"
-opExpr = "+ 79 4"
-rightExpr = "- 4 * 8 2"
-leftExpr = "- * 8 2 4"
+numStr, opStr, rightStr, leftStr :: String
+numStr = "79"
+opStr = "+ 79 4"
+rightStr = "- 4 * 8 2"
+leftStr = "- * 8 2 4"
 
 numExprToks, opExprToks, rightExprToks, leftExprToks :: [Token]
 numExprToks = [NumTok 79]
 opExprToks = [OpTok Plus, NumTok 79, NumTok 4]
 rightExprToks = [OpTok Minus, NumTok 4, OpTok Mult, NumTok 8, NumTok 2]
 leftExprToks = [OpTok Minus, OpTok Mult, NumTok 8, NumTok 2, NumTok 4]
+
+numExpr, opExpr, rightExpr, leftExpr :: Expr
+numExpr = NumExpr 79
+opExpr = OpExpr Plus (NumExpr 79) (NumExpr 4)
+rightExpr = OpExpr Minus (NumExpr 4) (OpExpr Times (NumExpr 8) (NumExpr 2))
+leftExpr = OpExpr Minus (OpExpr Times (NumExpr 8) (NumExpr 2)) (NumExpr 4)
