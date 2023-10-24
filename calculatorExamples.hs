@@ -31,16 +31,14 @@ opStr = "+ 79 4"
 rightStr = "- 4 * 8 2"
 leftStr = "- * 8 2 4"
 
-{- in the Calculator file 
 numExprToks, opExprToks, rightExprToks, leftExprToks :: [Token]
 numExprToks = [NumTok 79]
 opExprToks = [OpTok Plus, NumTok 79, NumTok 4]
 rightExprToks = [OpTok Minus, NumTok 4, OpTok Mult, NumTok 8, NumTok 2]
 leftExprToks = [OpTok Minus, OpTok Mult, NumTok 8, NumTok 2, NumTok 4]
--}
 
-numExpr, opExpr, rightExpr, leftExpr :: Expr
-numExpr = NumExpr 79
-opExpr = OpExpr Plus (NumExpr 79) (NumExpr 4)
-rightExpr = OpExpr Minus (NumExpr 4) (OpExpr Times (NumExpr 8) (NumExpr 2))
-leftExpr = OpExpr Minus (OpExpr Times (NumExpr 8) (NumExpr 2)) (NumExpr 4)
+numberTree, opTree, rightTree, leftTree :: Tree
+numberTree = NumTree 79
+opTree = OpTree Plus (NumTree 79) (NumTree 4)
+rightTree = OpTree Minus (NumTree 4) (OpTree Times (NumTree 8) (NumTree 2))
+leftTree = OpTree Minus (OpTree Times (NumTree 8) (NumTree 2)) (NumTree 4)

@@ -24,12 +24,15 @@ addYAll y (x:xs) = (x+y):(addYAll y xs)
 
 doubleAll [] = []
 doubleAll (x:xs) = (2*x):(doubleAll xs)
+doubleAllLC lst = [2*x | x <- lst]
+doubleAllHOF lst = map (2*) lst
 
 absAll [] = []
 absAll (x:xs) = (abs x):(absAll xs)
 
 singletons [] = []
 singletons (x:xs) = ([x]):(singletons xs)
+
 singletonsHOF lst = map makeList lst
   where makeList x = [x]
 
