@@ -1,9 +1,9 @@
 module Calculator where
 import Text.Read
 
-data Operator = Plus | Minus | Mult | Divide deriving (Eq)
-data Token = OpTok Operator | NumTok Double deriving (Eq)
-data Expr = OpExpr Operator Expr Expr | NumExpr Double deriving (Eq)
+data Operator = Plus | Minus | Mult | Divide deriving (Eq, Show)
+data Token = OpTok Operator | NumTok Double deriving (Eq, Show)
+data Expr = OpExpr Operator Expr Expr | NumExpr Double deriving (Eq, Show)
 
 --data Token = Plus | Minus | Mult | Divide | Num Double deriving (Show, Eq)
 --also valid, but we voted against it

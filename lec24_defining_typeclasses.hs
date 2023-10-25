@@ -9,6 +9,11 @@ class Boo a where
   trickOrTreat cond treat trick = if hekyll cond then treat else trick
   treat, trick :: a
 
+instance Boo Token where
+  hekyll tok = 
+  treat = 
+  trick = 
+
 instance Boo Bool where
   hekyll b = b
   --hekyll = id
