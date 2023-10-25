@@ -1,7 +1,10 @@
 --{-# LANGUAGE OverlappingInstances #-}
 
 import Data.Char
-import Calculator
+
+data Operator = Plus | Minus | Mult | Divide deriving (Eq)
+data Token = OpTok Operator | NumTok Double deriving (Eq)
+data Expr = OpExpr Operator Expr Expr | NumExpr Double deriving (Eq)
 
 class Boo a where
   hekyll :: a -> Bool
