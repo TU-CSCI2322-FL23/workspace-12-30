@@ -12,10 +12,18 @@ class Boo a where
   trickOrTreat cond treat trick = if hekyll cond then treat else trick
   treat, trick :: a
 
+instance Boo Operator where
+  hekyll Mult = True
+  hekyll Plus = True
+  hekyll op = False
+  treat = Mult
+  trick = Divide
+
 instance Boo Token where
-  hekyll tok = 
-  treat = 
-  trick = 
+  hekyll (OpTok op) = hekyll op
+  hekyll (NumTok num) = hekyll num
+  treat = OpTok Plus
+  trick = NumTok 1
 
 instance Boo Bool where
   hekyll b = b
